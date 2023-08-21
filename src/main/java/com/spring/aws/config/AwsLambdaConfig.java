@@ -1,5 +1,6 @@
 package com.spring.aws.config;
 
+import com.spring.aws.domain.Character;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -53,6 +54,10 @@ public class AwsLambdaConfig {
         };
     }
 
+    public Function<Character,Character> receiveAnObject(){
+
+        return (param) -> param;
+    }
 
 
 }
