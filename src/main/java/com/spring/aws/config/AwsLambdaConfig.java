@@ -2,7 +2,9 @@ package com.spring.aws.config;
 
 import com.spring.aws.domain.Character;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,12 +12,17 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-@Configuration
+@Component
 public class AwsLambdaConfig {
 
     @Bean(name = "saludar")
     public Supplier<String> greeting() {
         return () -> "Hello Word";
+    }
+
+    @Bean
+    public String demo(){
+        return "xdd";
     }
 
     @Bean
@@ -54,6 +61,7 @@ public class AwsLambdaConfig {
         };
     }
 
+    @Bean
     public Function<Character,Character> receiveAnObject(){
 
         return (param) -> param;
