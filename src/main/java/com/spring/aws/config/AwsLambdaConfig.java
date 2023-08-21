@@ -33,6 +33,8 @@ public class AwsLambdaConfig {
         };
     }
 
+    //generate a JSON
+    @Bean
     public Supplier<Map<String ,Object>> createCharacter(){
         return ()-> {
             Map<String, Object > character =new HashMap<>();
@@ -42,5 +44,9 @@ public class AwsLambdaConfig {
             return character;
 
         };
+    }
+
+    public Function<Map<String ,Object>,String> receiveCharaceter{
+
     }
 }
