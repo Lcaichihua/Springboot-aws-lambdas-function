@@ -52,4 +52,7 @@ public class AwsLambdaConfig {
             return "Personaje recibido";
         };
     }
+
+
+
 }
