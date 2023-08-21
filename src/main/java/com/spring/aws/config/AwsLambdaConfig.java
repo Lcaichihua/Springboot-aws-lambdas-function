@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -45,8 +44,12 @@ public class AwsLambdaConfig {
 
         };
     }
-
-    public Function<Map<String ,Object>,String> receiveCharaceter{
-
+    //receive a JSON and return String
+    @Bean
+    public Function<Map<String ,Object>,String> receiveCharaceter(){
+        return (param) -> {
+            param.forEach((key,value)->System.out.println(key + " - " +value.toString()));
+            return "Personaje recibido";
+        };
     }
 }
